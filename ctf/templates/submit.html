@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-md-6 mx-auto">
+    <div class="border-color border-3 card">
+        <div class="card-body">
+            <form action="" method="post">
+                <h1 class="card-title">Submit a new flag</h1>
+                {% csrf_token %}
+                <table>
+                    {% crispy form %}
+                </table>
+                <p>By submitting the flag you agree to the usage of cookies!</p>
+                <button type="submit" class="btn button-color" style="float: right;">Submit flag</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

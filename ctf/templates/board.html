@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Leaderboard</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Participant</th>
+            {% for flag in flags %}<th>{{ flag }}</th>{% endfor %}
+        </tr>
+    </thead>
+    {% for table_entry in table_entries %}
+    {% if table_entry.name == my_participant_name %}<tr class="table-secondary">{% else %}
+    <tr>{% endif %}
+        <td>{{ table_entry.display_name }}</td>
+        {% for flag in table_entry.flags %}<td{% if flag.time %} title="{{ flag.datetime }}" {% endif %}>{{ flag.time }}
+            </td>{% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn button-color" href="{% url 'submit' %}" role="button">Submit flag</a>
+</div>
+<script>setTimeout(() => { window.location.reload(1); }, {{ refreshInMs }});</script>
+{% endblock %}

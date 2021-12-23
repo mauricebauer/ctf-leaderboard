@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      # Set env vars correct
+      DATABASE_URL: postgres://app_user:changeme@postgres/app_db
+      DJANGO_SUPERUSER_USERNAME: django
+      DJANGO_SUPERUSER_PASSWORD: django
+      DJANGO_SUPERUSER_EMAIL: django@django.com
+      SECRET_KEY: ChangeToASecureSecret
+      ALLOWED_HOSTS: localhost,127.0.0.1
+      DEBUG: "False"
+    networks:
+      - backend
+      - frontend
+    depends_on:
+      - postgres
+
+  postgres:
+    restart: always
+    image: postgres:latest
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: app_db
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: changeme
+    networks:
+      - backend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+volumes:
+  pgdata: null
