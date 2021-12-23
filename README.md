@@ -36,6 +36,10 @@ Run the server:
 
     $ python3 manage.py runserver
 
+**Participant-Name-Format** (`name` e.g. `"Group B"` in the screenshot): max. 20 chars  
+**Name-Format** (`custom_name` e.g. `"Maurice, Gabriel"` in the screenshot): max. 40 chars `[a-zA-Z0-9_ ,]*`  
+**Flag-Format** (`secret`): max. 40 chars `[a-zA-Z0-9_]+`  
+
 ## Feature ideas
 
 This is a list of features some users requested but still need to be implemented. Feel free to implement one of them and submit a pull request. Thank you! Hint: we are roughly following the PEP 8 guideline using `autopep8`.
