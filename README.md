@@ -38,7 +38,7 @@ Run the server:
 
 **Participant-Name-Format** (`name` e.g. `"Group B"` in the screenshot): max. 20 chars  
 **Name-Format** (`custom_name` e.g. `"Maurice, Gabriel"` in the screenshot): max. 40 chars `[a-zA-Z0-9_ ,]*`  
-**Flag-Format** (`secret`): max. 40 chars `[a-zA-Z0-9_]+`  
+**Flag-Format** (`secret`): max. 200 chars `[a-zA-Z0-9_]+`  
 
 ## Feature ideas
 
