@@ -10,7 +10,7 @@ This app is written using Python 3 and the Django web framework.
 
 - Participants can submit flags found during the CTF challenge
 - Live reload on the leaderboard overview
-- Simple administration through the Django admin UI
+- Simple administration through the Django admin UI (at `/admin`)
 - Custom landing page through the `Content`-model in the DB for instructions, links and screenshots
 
 ## Getting started
