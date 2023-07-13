@@ -1,0 +1,16 @@
+.nav-blue {
+    background-color: #36648b;
+  }
+  
+  .border-color {
+    border-color: #36648b;
+  }
+  
+  .button-color {
+    background-color: #36648b;
+    color: white;
+  }
+  
+  .wrapper {
+    min-height: calc(100vh - 155px);
+  }
