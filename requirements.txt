@@ -3,7 +3,7 @@ crispy-bootstrap5==0.7
 Django==4.2.11
 django-crispy-forms==2.0
 django-environ==0.10.0
-gunicorn==20.1.0
+gunicorn==22.0.0
 pytz==2023.3
 sqlparse==0.4.4
 tzdata==2023.3
